@@ -8,10 +8,10 @@ RUN addgroup -S $USERNAME && \
 WORKDIR /app
 
 COPY ./package.json ./package-lock.json ./
+
 RUN npm i
-COPY ./src ./src
-COPY ./test ./test
-COPY ./.babelrc ./
+
+COPY . .
 
 USER $USERNAME:$USERNAME
 
